@@ -1,0 +1,103 @@
+<section id="glassmorphism">
+		<div class="square" style="--i:0"></div>
+		<div class="square" style="--i:1"></div>
+		<div class="square" style="--i:2"></div>
+		<div class="square" style="--i:3"></div>
+		<div class="square" style="--i:4"></div>
+		<ul>
+			<li><a href="https://www.facebook.com/groups/unmannedsystemsresearch"><i class="fab fa-facebook-f"></i></a></li>
+			<li><a href="https://twitter.com/SystemsUnmanned"><i class="fab fa-twitter"></i></a></li>
+			<li><a href="https://www.youtube.com/channel/UCMgLE3ju_kTotl6o76Fmemw"><i class="fab fa-youtube"></i></a></li>
+		</ul>
+	</section>
+  
+  <style>
+  
+/*Glassmorphism section*/
+#glassmorphism::before {
+	content: '';
+	position: default;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	backdrop-filter: blur(5px);
+}
+#glassmorphism {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+#glassmorphism .color {
+	position: absolute;
+	filter: blur(150px);
+}
+
+
+#glassmorphism ul {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+#glassmorphism ul li {
+	position: relative;
+	list-style: none;
+	margin: 50px;
+}
+#glassmorphism ul li a {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	text-decoration: none; 
+	color: #fff;
+	font-size: 2em;
+	border: 1px solid rgba(255,255,255,0.4);
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	box-shadow:  0 5px 40px rgba(0,0,0, 0.1);
+	backdrop-filter: blur(2px);
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+}
+#glassmorphism ul li a:hover {
+	transform: translateY(-20px);
+}
+#glassmorphism ul li a::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 100%;
+	background: rgba(255,255,255,0.5);
+	transform: skew(45deg) translateX(150px);
+	transition: 0.5s;
+}
+#glassmorphism ul li a:hover::before {
+	transform: skew(45deg) translateX(-150px);
+} 
+/*Glassmorphism elements */
+#glassmorphism .square {
+	position: default;
+	background: rgba(255,255,255,0.1);
+	border-radius: 5px;
+	backdrop-filter: blur(5px);
+	border: 1px solid rgba(255,255,255,0.4);	
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	box-shadow:  0 25px 45px rgba(0,0,0, 0.1);
+	z-index: 1;
+	animation-delay: calc(-1s * var(--i));
+}
+
+</style>
